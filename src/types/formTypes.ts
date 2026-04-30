@@ -8,8 +8,8 @@ export interface FormData {
 }
 
 export interface StepOneProps {
-    formData: FormData;
-    handleChange(field: keyof FormData, value: string): void;
+  register: UseFormRegister<FormData>;
+  errors: FieldErrors<FormData>;
 }
 
 export interface StepTwoProps {
