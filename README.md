@@ -1,83 +1,143 @@
-# Registration Wizard
+<div align="center">
 
-A multi-step onboarding form built with React, TypeScript, React Hook Form, and Zod. This project was built as a learning exercise progressing through three difficulty levels — from basic state management to industry-standard form handling.
+# 🧙‍♂️ Registration Wizard
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Level-Beginner%20→%20Advanced-brightgreen?style=flat-square" />
+  <img src="https://img.shields.io/badge/Forms-React%20Hook%20Form-EC5990?style=flat-square&logo=reacthookform&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square" />
+</p>
+
+<br/>
+
+> **A multi-step onboarding wizard** built from scratch — progressing from raw React state management all the way to industry-standard form handling with RHF + Zod.
+
+<br/>
+
+[🚀 Live Demo](#) · [📖 Prompt Log](./Prompt.md) · [🐛 Report Bug](#)
+
+</div>
 
 ---
 
-## Live Demo
+## 📸 Preview
 
-> Deploy to Vercel and paste your URL here.
+```
+┌─────────────────────────────────┐
+│  Create account                 │
+│  Step 1 of 3                    │
+│  ████████░░░░░░░░░░░░░░░  33%   │
+│                                 │
+│  PERSONAL INFO                  │
+│  ┌──────────────┐ ┌──────────┐  │
+│  │  First name  │ │Last name │  │
+│  └──────────────┘ └──────────┘  │
+│  ┌──────────────────────────┐   │
+│  │    Date of birth         │   │
+│  └──────────────────────────┘   │
+│                      [ Next → ] │
+└─────────────────────────────────┘
+```
 
 ---
 
-## Features
+## ✨ Features
 
-- Multi-step wizard with persistent state across steps
-- Real-time field validation with inline error messages
-- Show/Hide password toggle on password fields
-- Visual progress bar
-- Full Zod schema validation with cross-field confirmPassword check
-- Type-safe forms using React Hook Form + Zod
-- Step-by-step navigation with per-step validation trigger
-- Review screen before final submission
-- Success screen on submit
-- Minimal, neutral UI built with Tailwind CSS
-
----
-
-## Tech Stack
-
-| Tool | Purpose |
+| Feature | Level |
 |---|---|
-| React 18 | UI framework |
-| TypeScript | Type safety |
-| Vite | Build tool |
-| React Hook Form | Form state management |
-| Zod | Schema validation |
-| @hookform/resolvers | Bridge between RHF and Zod |
-| Tailwind CSS | Styling |
+| 🔀 Multi-step wizard with conditional rendering | ⭐ Level 1 |
+| 💾 Persistent state across steps — no data loss | ⭐ Level 1 |
+| 📋 Review screen before final submission | ⭐ Level 1 |
+| 🎉 Success screen after submit | ⭐ Level 1 |
+| ✅ Real-time inline field validation | ⭐⭐ Level 2 |
+| 🚫 Next button disabled until step is valid | ⭐⭐ Level 2 |
+| 👁️ Show / Hide password toggle | ⭐⭐ Level 2 |
+| 📊 Visual progress bar | ⭐⭐ Level 2 |
+| 🏗️ React Hook Form — zero unnecessary re-renders | ⭐⭐⭐ Level 3 |
+| 🛡️ Zod schema validation | ⭐⭐⭐ Level 3 |
+| 🔗 Cross-field password confirmation via `.refine()` | ⭐⭐⭐ Level 3 |
+| 🎯 Per-step validation with `trigger()` | ⭐⭐⭐ Level 3 |
+| 🎨 Minimal neutral UI with Tailwind CSS | All levels |
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
-src/
-├── components/
-│   ├── Wizard.tsx        # Parent component — owns form state and navigation
-│   ├── StepOne.tsx       # Personal info (first name, last name, date of birth)
-│   ├── StepTwo.tsx       # Account details (email, password, confirm password)
-│   └── StepThree.tsx     # Review & submit
-├── utils/
-│   ├── schema.ts         # Zod validation schema + FormData type
-│   └── validators.ts     # Manual validators (Level 2 reference)
-├── App.tsx
-└── main.tsx
+📦 registration-wizard
+├── 📁 src
+│   ├── 📁 components
+│   │   ├── 🧩 Wizard.tsx        # Parent — owns form state & navigation
+│   │   ├── 🧩 StepOne.tsx       # Personal info (name, DOB)
+│   │   ├── 🧩 StepTwo.tsx       # Account details + password toggle
+│   │   └── 🧩 StepThree.tsx     # Review & submit
+│   ├── 📁 utils
+│   │   ├── 📄 schema.ts         # Zod schema + auto-generated FormData type
+│   │   └── 📄 validators.ts     # Manual validators (Level 2 reference)
+│   ├── ⚛️  App.tsx
+│   └── 🚀 main.tsx
+├── 📄 index.html
+├── 📄 vite.config.ts
+└── 📄 package.json
 ```
 
 ---
 
-## Getting Started
+## 🛠️ Tech Stack
+
+<table>
+  <tr>
+    <td align="center"><img src="https://skillicons.dev/icons?i=react" width="40"/><br/><b>React 18</b><br/><sub>UI Framework</sub></td>
+    <td align="center"><img src="https://skillicons.dev/icons?i=ts" width="40"/><br/><b>TypeScript</b><br/><sub>Type Safety</sub></td>
+    <td align="center"><img src="https://skillicons.dev/icons?i=vite" width="40"/><br/><b>Vite</b><br/><sub>Build Tool</sub></td>
+    <td align="center"><img src="https://skillicons.dev/icons?i=tailwind" width="40"/><br/><b>Tailwind CSS</b><br/><sub>Styling</sub></td>
+  </tr>
+</table>
+
+**Form Libraries:**
+
+| Package | Version | Purpose |
+|---|---|---|
+| `react-hook-form` | latest | Performant form state management |
+| `zod` | latest | TypeScript-first schema validation |
+| `@hookform/resolvers` | latest | Connects Zod schema to RHF |
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- npm
+![Node](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)
+![npm](https://img.shields.io/badge/npm-latest-CB3837?logo=npm&logoColor=white)
 
 ### Installation
 
 ```bash
-git clone https://github.com/yogesh2002kashyap/registration-wizard.git
+# 1. Clone the repository
+git clone https://github.com/your-username/registration-wizard.git
+
+# 2. Navigate into the project
 cd registration-wizard
+
+# 3. Install dependencies
 npm install
+
+# 4. Start the development server
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173](http://localhost:5173) 🎉
 
----
-
-## Build
+### Build for Production
 
 ```bash
 npm run build
@@ -85,94 +145,160 @@ npm run build
 
 ---
 
-## How It Works
+## 🏗️ Architecture
 
-### State Management
+### How State Flows
 
-`Wizard.tsx` is the single source of truth. It owns the `useForm()` hook from React Hook Form and passes `register`, `errors`, and `watch` down to each step as props. No step component manages its own form state.
-
-### Validation Strategy
-
-Validation is defined once in `utils/schema.ts` as a Zod schema. React Hook Form uses `zodResolver` to connect the schema automatically. When the user clicks Next, `trigger()` validates only the current step's fields before advancing.
-
-```ts
-// Step 1 — validate only personal info fields
-const isValid = await trigger(["firstName", "lastName", "dateOfBirth"]);
-if (isValid) setCurrentStep(prev => prev + 1);
+```
+┌──────────────────────────────────────────────┐
+│                  Wizard.tsx                  │
+│           useForm() — single source          │
+│     register   errors   watch   trigger      │
+└────────┬──────────────┬──────────────┬───────┘
+         │ props        │ props        │ props
+   ┌─────▼──────┐ ┌─────▼──────┐ ┌────▼───────┐
+   │  StepOne   │ │  StepTwo   │ │  StepThree │
+   │  Personal  │ │  Account   │ │   Review   │
+   └────────────┘ └────────────┘ └────────────┘
 ```
 
-### Cross-field Validation
+### Validation Flow
 
-The confirmPassword check requires comparing two fields. This is handled with Zod's `.refine()`:
+```
+User types
+  → RHF tracks value internally (no useState per field)
+      → Zod schema validates on every change
+          → errors surface via formState.errors
+              → trigger() fires on Next click
+                  → only advances if all step fields pass
+```
+
+### Per-Step Validation — the key pattern
 
 ```ts
-.refine(
+async function next() {
+  if (currentStep === 0) {
+    // Only validate Step 1 fields
+    const isValid = await trigger(["firstName", "lastName", "dateOfBirth"]);
+    if (isValid) setCurrentStep(prev => prev + 1);
+  } else if (currentStep === 1) {
+    // Only validate Step 2 fields
+    const isValid = await trigger(["email", "password", "confirmPassword"]);
+    if (isValid) setCurrentStep(prev => prev + 1);
+  }
+}
+```
+
+### Cross-field Validation with `.refine()`
+
+```ts
+export const registrationSchema = z.object({
+  password: z.string()
+    .min(8, "Password must be at least 8 characters")
+    .regex(/[A-Z]/, "Must contain at least one uppercase letter")
+    .regex(/[0-9]/, "Must contain at least one number")
+    .regex(/[!@#$%^&*]/, "Must contain at least one special character"),
+  confirmPassword: z.string(),
+}).refine(
   (data) => data.password === data.confirmPassword,
   { message: "Passwords do not match", path: ["confirmPassword"] }
-)
+);
 ```
 
-### Type Safety
-
-`FormData` is not written manually — it is inferred directly from the Zod schema:
+### Auto-generated TypeScript Types
 
 ```ts
+// ❌ Before — written manually, can drift from validation rules
+interface FormData {
+  email: string;
+  password: string;
+}
+
+// ✅ After — Zod generates it automatically, always in sync
 export type FormData = z.infer<typeof registrationSchema>;
 ```
 
 ---
 
-## Difficulty Levels
+## 📈 Difficulty Progression
 
-### Level 1 — Core Logic
-- Multi-step wizard with conditional rendering
-- Shared state lifted to parent component
-- Data persists when navigating between steps
-- Review screen and console.log on submit
+```
+⭐ Level 1 ─────────────────────────── Foundation
+  ✔  Multi-step wizard (3 steps)
+  ✔  useState for shared form state in parent
+  ✔  Controlled components across all steps
+  ✔  Data persists when navigating between steps
+  ✔  Review screen + console.log on submit
+  ✔  Success screen after submission
 
-### Level 2 — Manual Validation
-- Real-time validation on every keystroke
-- Inline error messages per field
-- Next button disabled until current step is valid
-- Show/Hide password toggle
-- Progress bar
+⭐⭐ Level 2 ────────────────────────── Polish
+  ✔  Real-time validation with Regex
+  ✔  Inline error messages per field
+  ✔  Next button disabled until step is valid
+  ✔  Show / Hide password toggle
+  ✔  Visual progress bar
 
-### Level 3 — Industry Standard
-- React Hook Form replaces all manual useState for inputs
-- Zod schema replaces manual validator functions
-- Per-step validation using `trigger()`
-- Fully type-safe with `z.infer`
-
----
-
-## Key Learnings
-
-- Lifting state up in React — why parent components own shared data
-- Controlled components — the difference between `value` + `onChange` vs uncontrolled inputs
-- TypeScript interfaces vs types, `keyof`, and `import type`
-- Regex patterns for email and password validation
-- Why `e.preventDefault()` matters on form submissions
-- How React Hook Form eliminates re-renders on every keystroke
-- How Zod schemas generate TypeScript types automatically
-- Cross-field validation with `.refine()`
-- Case-sensitive file imports for Vercel deployment
-
----
-
-## Deployment
-
-This project deploys to Vercel with zero configuration.
-
-> **Important:** File names are case-sensitive on Vercel. Ensure all imports match the exact filename casing — `StepOne.tsx` not `stepone.tsx`.
-
-```bash
-npm run build
-# Deploy the dist/ folder to Vercel
+⭐⭐⭐ Level 3 ──────────────────────── Industry Standard
+  ✔  React Hook Form — no useState for inputs
+  ✔  Zod schema — single source of validation truth
+  ✔  zodResolver bridges RHF + Zod
+  ✔  trigger() for per-step field validation
+  ✔  z.infer for auto-generated TypeScript types
+  ✔  Cross-field validation with .refine()
 ```
 
 ---
 
-## Author
+## 💡 Key Learnings
 
-**Your Name**
-[GitHub](https://github.com/yogesh2002kashyap) · [LinkedIn](https://linkedin.com/in/yogesh2002kashyap)
+- 🧠 **Lifting state up** — why parent components own shared data across steps
+- 🎮 **Controlled components** — the role of `value` + `onChange` on every input
+- 🔷 **TypeScript** — interfaces, `keyof`, union types, and `import type`
+- 🔍 **Regex** — writing patterns for email, password strength validation
+- ⚡ **RHF performance** — why uncontrolled inputs prevent unnecessary re-renders
+- 🛡️ **Zod** — schema-first validation and automatic type inference
+- 🔗 **`.refine()`** — handling cross-field validation that needs two values at once
+- 🚀 **Vercel deployment** — case-sensitive imports can silently break production
+
+---
+
+## ⚠️ Deployment Notes
+
+> **Vercel is strictly case-sensitive.** A file named `StepOne.tsx` imported as `stepone` will work locally on Windows/Mac and silently fail on Vercel.
+
+```ts
+// ✅ Correct — matches filename exactly
+import StepOne from "./StepOne";
+
+// ❌ Breaks on Vercel
+import StepOne from "./stepone";
+```
+
+Also ensure your `.gitignore` includes:
+
+```
+node_modules
+dist
+.env
+```
+
+---
+
+## 📝 License
+
+Built as a learning assignment at Infocera. Free to use as a reference.
+
+---
+
+<div align="center">
+
+**Built with 🤍 and a lot of `console.log()`**
+
+<br/>
+
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Made with love](https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square)
+
+</div>
