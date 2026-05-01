@@ -22,7 +22,7 @@
 
 <br/>
 
-[🚀 Live Demo](#) · [📖 Prompt Log](./Prompt.md) · [🐛 Report Bug](#)
+[🚀 Live Demo](https://registration-wizard-five.vercel.app/) · [📖 Prompt Log](./Prompt.md) · [🐛 Report Bug](yogesh2003kashyap@gmail.com)
 
 </div>
 
