@@ -123,7 +123,7 @@
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/registration-wizard.git
+git clone https://github.com/yogesh2002kashyap/registration-wizard.git
 
 # 2. Navigate into the project
 cd registration-wizard
